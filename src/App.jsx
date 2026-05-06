@@ -161,7 +161,7 @@ function App() {
           <div className="content-wrapper">
             <h1 className="title" style={{ marginBottom: '8px', color: 'white', textShadow: '0 0 20px rgba(255,255,255,0.3)', letterSpacing: '2px' }}>THE AEGIS VAULT</h1>
             <div style={{ height: '40px', marginBottom: '24px' }}>
-              <span key={keywordIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={keywordIndex} className="keyword-animate-white keyword-text">
                 {keywords[keywordIndex]}
               </span>
             </div>
@@ -184,7 +184,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="title" style={{ marginBottom: '8px' }}>The Regulatory Imperative</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={esprIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={esprIndex} className="keyword-animate-white keyword-text">
                 {esprKeywords[esprIndex]}
               </span>
             </div>
@@ -209,7 +209,7 @@ function App() {
           <div className="content-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2 className="title" style={{ marginBottom: '8px' }}>Our Architecture</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={archIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={archIndex} className="keyword-animate-white keyword-text">
                 {archKeywords[archIndex]}
               </span>
             </div>
@@ -300,7 +300,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="title" style={{ marginBottom: '8px' }}>Physical Hardware Meets Digital Sovereignty</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={hardwareIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={hardwareIndex} className="keyword-animate-white keyword-text">
                 {hardwareKeywords[hardwareIndex]}
               </span>
             </div>
@@ -356,7 +356,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="title" style={{ marginBottom: '8px' }}>Staggering Scale</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={scaleIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={scaleIndex} className="keyword-animate-white keyword-text">
                 {scaleKeywords[scaleIndex]}
               </span>
             </div>
@@ -365,13 +365,13 @@ function App() {
             </p>
             
             <div className="glass-panel" style={{ textAlign: 'center', padding: '60px 40px' }}>
-              <div style={{ fontSize: '1.5rem', color: 'var(--color-text-muted)', marginBottom: '16px', textTransform: 'uppercase' }}>
+              <div className="counter-label" style={{ color: 'var(--color-text-muted)', marginBottom: '16px' }}>
                 {activeHardware === 'UNO_Q' ? 'UNO Q' : 'Ventuno Q'} Maximum Capacity
               </div>
-              <div style={{ fontSize: '6rem', fontWeight: '800', color: 'var(--color-tron-cyan)', lineHeight: '1', marginBottom: '16px', textShadow: '0 0 20px rgba(0,255,255,0.5)' }}>
+              <div className="counter-value">
                 {dppCount.toLocaleString()}
               </div>
-              <div style={{ fontSize: '2rem', color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <div className="counter-label">
                 Unit DPPs
               </div>
               <div style={{ marginTop: '24px', fontSize: '1.2rem', color: 'var(--color-electric-purple)' }}>
@@ -390,7 +390,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="title" style={{ marginBottom: '8px' }}>Linked with the Stars</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={starlinkIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={starlinkIndex} className="keyword-animate-white keyword-text">
                 {starlinkKeywords[starlinkIndex]}
               </span>
             </div>
@@ -412,7 +412,7 @@ function App() {
           <div className="content-wrapper">
             <h2 className="title" style={{ marginBottom: '8px' }}>Backup DPP Explorer</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
-              <span key={uiIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
+              <span key={uiIndex} className="keyword-animate-white keyword-text">
                 {uiKeywords[uiIndex]}
               </span>
             </div>

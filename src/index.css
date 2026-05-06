@@ -368,6 +368,44 @@ h1, h2, h3 {
     grid-template-columns: 1fr !important;
   }
   .title {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
+  .counter-value {
+    font-size: 3rem !important;
+  }
+  .counter-label {
+    font-size: 1.2rem !important;
+  }
+  .keyword-text {
+    font-size: 1.2rem !important;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Default classes for specific elements */
+.counter-value {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--color-tron-cyan);
+  line-height: 1;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(0,255,255,0.5);
+  word-break: break-all;
+}
+
+.counter-label {
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.keyword-text {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
