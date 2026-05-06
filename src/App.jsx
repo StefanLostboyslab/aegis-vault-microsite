@@ -159,7 +159,7 @@ function App() {
           style={{ backgroundImage: `url('/assets/aegis_vault_2.png')` }}
         >
           <div className="content-wrapper">
-            <h1 className="title" style={{ fontSize: '5rem', marginBottom: '8px', color: 'white', textShadow: '0 0 20px rgba(255,255,255,0.3)', letterSpacing: '2px' }}>THE AEGIS VAULT</h1>
+            <h1 className="title" style={{ marginBottom: '8px', color: 'white', textShadow: '0 0 20px rgba(255,255,255,0.3)', letterSpacing: '2px' }}>THE AEGIS VAULT</h1>
             <div style={{ height: '40px', marginBottom: '24px' }}>
               <span key={keywordIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {keywords[keywordIndex]}
@@ -182,7 +182,7 @@ function App() {
           style={{ backgroundImage: `url('/assets/10_year_guarantee.png')` }}
         >
           <div className="content-wrapper">
-            <h2 className="title" style={{ fontSize: '4.5rem', marginBottom: '8px' }}>The Regulatory Imperative</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>The Regulatory Imperative</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={esprIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {esprKeywords[esprIndex]}
@@ -207,7 +207,7 @@ function App() {
           style={{ backgroundImage: `url('/assets/regulatory_space_bg.jpg')` }}
         >
           <div className="content-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h2 className="title" style={{ fontSize: '4.5rem', marginBottom: '8px' }}>Our Architecture</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>Our Architecture</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={archIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {archKeywords[archIndex]}
@@ -298,7 +298,7 @@ function App() {
           }}
         >
           <div className="content-wrapper">
-            <h2 className="title" style={{ fontSize: '3rem', marginBottom: '8px' }}>Physical Hardware Meets Digital Sovereignty</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>Physical Hardware Meets Digital Sovereignty</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={hardwareIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {hardwareKeywords[hardwareIndex]}
@@ -354,7 +354,7 @@ function App() {
           ref={counterRef}
         >
           <div className="content-wrapper">
-            <h2 className="title" style={{ fontSize: '3rem', marginBottom: '8px' }}>Staggering Scale</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>Staggering Scale</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={scaleIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {scaleKeywords[scaleIndex]}
@@ -388,7 +388,7 @@ function App() {
           style={{ backgroundImage: `url('/assets/aegis_vault_to_stars.png')` }}
         >
           <div className="content-wrapper">
-            <h2 className="title" style={{ fontSize: '4.5rem', marginBottom: '8px' }}>Linked with the Stars</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>Linked with the Stars</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={starlinkIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {starlinkKeywords[starlinkIndex]}
@@ -410,14 +410,14 @@ function App() {
           style={{ background: 'var(--color-bg-dark)' }}
         >
           <div className="content-wrapper">
-            <h2 className="title" style={{ fontSize: '3rem', marginBottom: '8px' }}>Live Edge Explorer & Backup UI</h2>
+            <h2 className="title" style={{ marginBottom: '8px' }}>Backup DPP Explorer</h2>
             <div style={{ height: '40px', marginBottom: '40px' }}>
               <span key={uiIndex} className="keyword-animate-white" style={{ fontSize: '2rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>
                 {uiKeywords[uiIndex]}
               </span>
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+            <div className="gallery-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', maxWidth: '1200px', margin: '0 auto' }}>
               
               <div className="glass-panel screenshot-btn" onClick={() => setActiveScreenshot('/assets/dpp_backup.jpg')} style={{ cursor: 'pointer', padding: '10px', border: '1px solid var(--color-electric-purple)', transition: 'transform 0.3s' }}>
                 <img src="/assets/dpp_backup.jpg" alt="DPP Backup View" style={{ width: '100%', borderRadius: '8px', marginBottom: '10px' }} />
@@ -469,7 +469,7 @@ function App() {
           style={{ background: 'linear-gradient(to bottom, var(--color-bg-dark), rgba(5,5,10,1))', borderTop: '1px solid rgba(0,255,255,0.1)' }}
         >
           <div className="content-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h2 className="title" style={{ fontSize: '3rem', marginBottom: '16px' }}>The whatt.io Ecosystem</h2>
+            <h2 className="title" style={{ marginBottom: '16px' }}>The whatt.io Ecosystem</h2>
             <p className="subtitle" style={{ maxWidth: '800px', margin: '0 auto 60px auto', fontSize: '1.2rem' }}>
               Connect the dots. The Aegis Vault operates in perfect synchronization with our live suite of applications. Mint, capture, and explore your Digital Product Passports seamlessly.
             </p>
