@@ -409,3 +409,41 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+/* --- Defense Matrix Modal Responsive --- */
+@media (max-width: 1024px) {
+  .matrix-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 80px 20px 20px 20px !important;
+  }
+
+  .matrix-sidebar {
+    flex: 0 0 auto !important;
+    max-height: 250px !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-electric-purple) !important;
+    padding-right: 0 !important;
+    padding-bottom: 20px !important;
+  }
+
+  .matrix-main {
+    flex: 1 1 auto !important;
+  }
+
+  .matrix-main h2 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .matrix-sidebar {
+    max-height: 200px !important;
+  }
+  .matrix-main h2 {
+    font-size: 1.5rem !important;
+  }
+  .matrix-main p {
+    font-size: 1rem !important;
+  }
+}

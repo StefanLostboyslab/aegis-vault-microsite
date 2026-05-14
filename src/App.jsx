@@ -13,7 +13,9 @@ function App() {
   const [uiIndex, setUiIndex] = useState(0);
   const [sandboxIndex, setSandboxIndex] = useState(0);
   const [activeModal, setActiveModal] = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
   const [activeScreenshot, setActiveScreenshot] = useState(null);
+  const [activeDefenseIndex, setActiveDefenseIndex] = useState(0);
   const counterRef = useRef(null);
 
   const keywords = [
@@ -80,6 +82,54 @@ function App() {
     "Local LAN Isolation",
     "IP Protection",
     "Closed Environment"
+  ];
+
+  const defenseScenarios = [
+    {
+      title: "Catastrophic Physical Destruction",
+      attack: "Okay, you have a fortress in Sweden. But what if that specific building burns to the ground, floods, or gets hit by a missile? All the physical hardware is gone.",
+      answer: "Cloud Resynchronization & The Aegis Mirror. Because of our Asymmetric Dual-Layer architecture, if the physical fortress is completely destroyed, the primary whatt.io cloud on Digital Ocean is entirely unaffected. The products still function flawlessly. We simply ship a new batch of Aegis hardware to a new facility, plug them in, and they automatically resynchronize the entire immutable ledger from the cloud. Furthermore, for enterprise clients requiring absolute, immediate edge certainty, we deploy The Aegis Mirror Protocol. This runs synchronized Ventuno Q nodes in geographically distant facilities simultaneously."
+    },
+    {
+      title: "Total Terrestrial Network Collapse",
+      attack: "Fiber optic cables get cut by construction crews all the time. Local cell towers can go down in a storm. How do you serve data if the internet line to the fortress is severed?",
+      answer: "Cloud Continuity & Orbital Starlink Failover. If the Swedish fortress loses its 1000MBit fiber connection, consumers scanning NFC tags around the world will not even notice, because their scans are instantly routed to the primary Digital Ocean cloud. However, to maintain the edge node's operational capability and sync status, the physical facilities are equipped with automated Starlink failover systems. The moment the terrestrial fiber drops, the edge nodes instantly switch to beaming their payloads directly to low-earth orbit satellites."
+    },
+    {
+      title: "The 'Startup Death' Scenario",
+      attack: "The ESPR mandates 10-year data availability. What happens if whatt.io goes bankrupt in year 3? If the main cloud shuts down, doesn't the digital product passport disappear?",
+      answer: "Hardware Sovereignty. This is the exact inverse of the physical destruction scenario, and precisely why the Aegis Vault exists. If the main Digital Ocean cloud vanishes due to corporate insolvency, standard SaaS platforms would take your data down with them. The Aegis Vault, however, is a physical Debian Linux machine owned by the client. It contains a self-sufficient, immutable database and a locally hosted Edge Explorer UI. You can pick up the box, plug it into any Ethernet port anywhere in the world, and it will continue to serve your DPPs flawlessly for the remainder of the 10-year legal mandate."
+    },
+    {
+      title: "Hardware Degradation",
+      attack: "You're promising 10 years of uptime, but hard drives fail. Solid-state drives degrade over time. How can a Qualcomm Arduino board survive a decade?",
+      answer: "Zero Moving Parts & Immutable Overhead. Standard servers fail because of heat, dust, and mechanical spinning drives. The Arduino UNO Q and Ventuno Q have zero moving parts. Furthermore, the storage (eMMC and NVMe) is specifically optimized for our immutable ledger architecture. Because DPPs are largely 'write-once, read-many,' we eliminate the destructive read/write cycles that kill SSDs. Combined with automated telemetry that predicts component degradation months before failure, we simply hot-swap mirrored drives or node clusters via cloud resync before any data is ever at risk."
+    },
+    {
+      title: "Cyber Attacks & Ransomware",
+      attack: "If it's a physical server connected to the internet, it can be hacked. What happens when a ransomware gang targets the Aegis Vault?",
+      answer: "Zero Trust Architecture & Outbound Tunnels. The Aegis Vault does not expose open ports (like SSH or HTTP) to the public internet. Instead, it utilizes encrypted Cloudflare Tunnels that establish outbound-only connections. There is no 'front door' for port scanners to attack. Even if breached, the database structure acts as an append-only ledger—historical data cannot be cryptographically altered without breaking the blockchain anchor. If a node is compromised, it is instantly quarantined, wiped, and rebuilt from the pristine Digital Ocean master cloud."
+    },
+    {
+      title: "Pre-Launch IP Theft",
+      attack: "You want our engineering team to use this for prototyping? If we put our pre-launch CAD data and unreleased specs on the Aegis Vault, what stops competitors from accessing our highly confidential IP?",
+      answer: "The Private Design Sandbox & Verifiable Credentials. During the pre-launch phase, the Aegis Vault acts as a completely closed, isolated environment. It can be restricted to operate entirely within your local LAN or a private corporate VPN. External access is impossible. Access to pre-launch DPPs requires strict Verifiable Credentials. Your intellectual property never traverses the public internet and never leaves the physical hardware until you explicitly authorize the public launch."
+    },
+    {
+      title: "Regulatory Skepticism",
+      attack: "If the data lives on your physical server, how does an auditor know you or the brand didn't just edit the database to lie about the product's sustainability metrics after the fact?",
+      answer: "Polygon Blockchain Anchoring. The Aegis Vault and the primary cloud store the heavy payload (images, PDFs, rich metadata), but the cryptographic hash of that exact data is anchored immutably to the Polygon blockchain. If a brand attempts to alter a single byte of a sustainability report on the Vault or the Cloud, the hash changes. The NFC tag scan immediately detects the mismatch between the hosted data and the Blockchain anchor, flagging the passport as compromised. Mathematics provides the trust."
+    },
+    {
+      title: "The Cloudflare Collapse",
+      attack: "You say you use Cloudflare for DNS, the marketing CDN, and the Zero Trust outbound tunnels that keep the Aegis nodes secure. What if Cloudflare goes bankrupt or suffers a permanent global outage?",
+      answer: "Agnostic Infrastructure & Local Integrity. Cloudflare is merely a routing utility; it holds none of the source data. If Cloudflare goes bankrupt, the physical Aegis hardware sitting in the Swedish facility (or mirrored locations) remains 100% operational and retains all data. To restore global routing, we simply update the domain's Name Servers at the registrar level to point to an alternative provider like AWS Route53 or Google Cloud DNS. For the secure node tunnels, we would push an Over-The-Air (OTA) configuration update switching the nodes from cloudflared to an alternative secure VPN architecture. The data never moves; only the traffic directions change."
+    },
+    {
+      title: "Domain Registrar Bankruptcy",
+      attack: "What if your domain registrar goes completely out of business? If you lose the domain, all the NFC tags pointing to that URL become dead links.",
+      answer: "ICANN Protection & Direct IP Access. First, domain names are governed globally by ICANN. If a registrar goes bankrupt, ICANN immediately triggers the De-Accredited Registrar Transition Procedure. Your domains are automatically and safely transferred to a solvent, accredited registrar. You do not lose ownership of the URL. However, even in the absolute most catastrophic scenario where a nation-state seizes the domain, the Aegis Vault's core value holds true: the data is physical. The Ventuno Q node does not require a DNS URL to function. The node can be accessed directly via its local IP address on any network. The hardware guarantees that your data is never truly lost."
+    }
   ];
 
   // Keyword animation cycle
@@ -583,7 +633,100 @@ function App() {
           </div>
         )}
 
+        {/* Section 8: The Defense Matrix Trigger */}
+        <section 
+          id="defense" 
+          className="hero-section" 
+          style={{ background: 'var(--color-bg-dark)', paddingBottom: '100px' }}
+        >
+          <div className="content-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h2 className="title" style={{ marginBottom: '16px', color: 'var(--color-tron-cyan)' }}>The Defense Matrix</h2>
+            <p className="subtitle" style={{ maxWidth: '800px', margin: '0 auto 40px auto', fontSize: '1.2rem', color: 'var(--color-text-main)' }}>
+              Simulate the most extreme catastrophic events and see how the Aegis Vault Asymmetric Architecture guarantees absolute data survival.
+            </p>
+            <button 
+              className="btn-tron" 
+              onClick={() => setActiveModal('defenseMatrix')}
+              style={{ fontSize: '1.2rem', padding: '15px 40px', background: 'rgba(0, 255, 255, 0.1)', border: '2px solid var(--color-tron-cyan)' }}
+            >
+              INITIALIZE CATASTROPHE SIMULATOR
+            </button>
+          </div>
+        </section>
+
       </main>
+
+      {/* Defense Matrix Modal */}
+      {activeModal === 'defenseMatrix' && (
+        <div className="matrix-modal" style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: `url('/assets/disaster_matrix_bg.png') center/cover`,
+          zIndex: 2000, display: 'flex', flexDirection: 'column'
+        }}>
+          {/* Dark Overlay for Readability */}
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(5, 5, 10, 0.85)', zIndex: 1 }}></div>
+          
+          {/* Close Button */}
+          <button 
+            className="btn-tron" 
+            onClick={() => setActiveModal(null)}
+            style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 10, background: 'rgba(0,0,0,0.5)' }}
+          >
+            TERMINATE SIMULATION [X]
+          </button>
+
+          {/* Modal Content */}
+          <div className="matrix-container" style={{ position: 'relative', zIndex: 2, display: 'flex', height: '100%', padding: '80px 40px 40px 40px', gap: '40px', maxWidth: '1400px', margin: '0 auto', width: '100%' }}>
+            
+            {/* Sidebar List */}
+            <div className="matrix-sidebar" style={{ flex: '1', overflowY: 'auto', borderRight: '1px solid var(--color-electric-purple)', paddingRight: '20px' }}>
+              <h3 style={{ color: 'white', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '10px' }}>Threat Vectors</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {defenseScenarios.map((scenario, idx) => (
+                  <button 
+                    key={idx}
+                    onClick={() => setActiveDefenseIndex(idx)}
+                    style={{
+                      background: activeDefenseIndex === idx ? 'rgba(0, 255, 255, 0.2)' : 'transparent',
+                      border: activeDefenseIndex === idx ? '1px solid var(--color-tron-cyan)' : '1px solid rgba(255,255,255,0.1)',
+                      color: activeDefenseIndex === idx ? 'white' : 'var(--color-text-muted)',
+                      padding: '15px',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      borderRadius: '4px',
+                      transition: 'all 0.2s',
+                      textTransform: 'uppercase',
+                      fontWeight: activeDefenseIndex === idx ? 'bold' : 'normal'
+                    }}
+                  >
+                    {idx + 1}. {scenario.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Content Area */}
+            <div className="matrix-main" style={{ flex: '2', overflowY: 'auto', padding: '40px', background: 'rgba(0,0,0,0.6)', borderRadius: '8px', border: '1px solid rgba(0,255,255,0.2)', backdropFilter: 'blur(10px)' }}>
+              <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '30px' }}>{defenseScenarios[activeDefenseIndex].title}</h2>
+              
+              <div style={{ marginBottom: '40px' }}>
+                <h4 style={{ color: '#ff3366', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>The Attack</h4>
+                <p style={{ fontSize: '1.2rem', color: 'white', lineHeight: '1.8', fontStyle: 'italic', borderLeft: '4px solid #ff3366', paddingLeft: '15px' }}>
+                  "{defenseScenarios[activeDefenseIndex].attack}"
+                </p>
+              </div>
+
+              <div>
+                <h4 style={{ color: 'var(--color-tron-cyan)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>The Definitive Answer</h4>
+                <p style={{ fontSize: '1.2rem', color: 'var(--color-text-main)', lineHeight: '1.8', borderLeft: '4px solid var(--color-tron-cyan)', paddingLeft: '15px' }}>
+                  {defenseScenarios[activeDefenseIndex].answer}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      )}
     </>
   )
 }
