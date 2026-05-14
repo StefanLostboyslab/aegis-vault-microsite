@@ -199,6 +199,7 @@ function App() {
           <a href="#sandbox">Prototyping</a>
           <a href="#demo">Backup DPP</a>
           <a href="#ecosystem">Apps</a>
+          <a href="#defense">Defense Matrix</a>
         </div>
       </nav>
 
