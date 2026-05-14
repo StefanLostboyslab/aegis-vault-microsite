@@ -13,7 +13,6 @@ function App() {
   const [uiIndex, setUiIndex] = useState(0);
   const [sandboxIndex, setSandboxIndex] = useState(0);
   const [activeModal, setActiveModal] = useState(null);
-  const [activeModal, setActiveModal] = useState(null);
   const [activeScreenshot, setActiveScreenshot] = useState(null);
   const [activeDefenseIndex, setActiveDefenseIndex] = useState(0);
   const counterRef = useRef(null);
