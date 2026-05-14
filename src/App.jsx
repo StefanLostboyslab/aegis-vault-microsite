@@ -11,6 +11,7 @@ function App() {
   const [scaleIndex, setScaleIndex] = useState(0);
   const [starlinkIndex, setStarlinkIndex] = useState(0);
   const [uiIndex, setUiIndex] = useState(0);
+  const [sandboxIndex, setSandboxIndex] = useState(0);
   const [activeModal, setActiveModal] = useState(null);
   const [activeScreenshot, setActiveScreenshot] = useState(null);
   const counterRef = useRef(null);
@@ -72,6 +73,15 @@ function App() {
     "Encrypted UI Backups"
   ];
 
+  const sandboxKeywords = [
+    "Pre-Launch Sandbox",
+    "Private Prototyping",
+    "Verifiable Credentials",
+    "Local LAN Isolation",
+    "IP Protection",
+    "Closed Environment"
+  ];
+
   // Keyword animation cycle
   useEffect(() => {
     const timer = setInterval(() => {
@@ -82,6 +92,7 @@ function App() {
       setScaleIndex((prev) => (prev + 1) % scaleKeywords.length);
       setStarlinkIndex((prev) => (prev + 1) % starlinkKeywords.length);
       setUiIndex((prev) => (prev + 1) % uiKeywords.length);
+      setSandboxIndex((prev) => (prev + 1) % sandboxKeywords.length);
     }, 2500);
     return () => clearInterval(timer);
   }, []);
@@ -136,6 +147,7 @@ function App() {
           <a href="#architecture">Architecture</a>
           <a href="#hardware">Hardware</a>
           <a href="#scale">Scale</a>
+          <a href="#sandbox">Prototyping</a>
           <a href="#demo">Backup DPP</a>
           <a href="#ecosystem">Apps</a>
         </div>
@@ -403,7 +415,32 @@ function App() {
           </div>
         </section>
 
-        {/* Section 6: Live Edge Explorer Demo */}
+        {/* Section 6: Private Design Sandbox */}
+        <section 
+          id="sandbox" 
+          className="hero-section" 
+          style={{ backgroundImage: `url('/assets/private_design_sandbox.png')` }}
+        >
+          <div className="content-wrapper">
+            <h2 className="title" style={{ marginBottom: '8px' }}>Private Design Sandbox</h2>
+            <div style={{ height: '40px', marginBottom: '40px' }}>
+              <span key={sandboxIndex} className="keyword-animate-white keyword-text">
+                {sandboxKeywords[sandboxIndex]}
+              </span>
+            </div>
+            
+            <div className="glass-panel" style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto', textAlign: 'center', background: 'rgba(5,5,10,0.85)', backdropFilter: 'blur(10px)' }}>
+              <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'white', marginBottom: '20px' }}>
+                Before a product reaches the public, it must be perfected in private. The Aegis Vault serves as an impenetrable sandbox for design and engineering teams during the pre-launch prototyping phase.
+              </p>
+              <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--color-tron-cyan)', margin: 0 }}>
+                Protect pre-launch Digital Product Passports with <strong>Verifiable Credentials</strong> and strict authentication. Iterate, collaborate, and collect early telemetry entirely isolated within your local LAN or private cloud—ensuring your intellectual property never leaves the Aegis hardware until launch day.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 7: Live Edge Explorer Demo */}
         <section 
           id="demo" 
           className="hero-section" 
